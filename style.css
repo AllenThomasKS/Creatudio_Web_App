@@ -1204,6 +1204,7 @@ fieldset[disabled] a.btn {
 .image-hvr-effect {
   display: flex;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .image-hvr-effect img.post-image {
@@ -2332,11 +2333,50 @@ margin-top: 300px; /* Remove, centering is now flex-controlled */
 }
 
 #latest-blog {
-
-  height: 69vh;
-  background-color: #171717; /* Make the section fill the full viewport height */
-
+  min-height: 100vh; /* Minimum height to fill the full viewport initially */
+  padding: 20px 0; /* Adds padding to the top and bottom */
+  background-color: #171717;
+  display: flex;
+  align-items: center;
 }
+
+/* Ensures container takes full width */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Default styling for post images */
+.post-image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 768px) {
+  .post-grid .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers items horizontally */
+    gap: 20px; /* Adds space between images */
+  }
+
+  /* Reduce image size further (e.g., 30% width) on smaller screens */
+  .post-image {
+    width: 60% !important; /* Makes images 30% of the width */
+    margin: 0 auto; /* Centers the images */
+    border-radius: 20px;
+  }
+}
+
+
+
+.post-item {
+  margin: 15px 0; /* Add gap at the top and bottom of each image */
+}
+
 /*----- About us Section
 --------------------------------------------------------------*/
 #about figure {
