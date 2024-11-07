@@ -1343,25 +1343,23 @@ This is main CSS file that contains custom style rules used in this template
 /* Logo
 ------------------------------------------------------------- */
 .main-logo {
-  height: var(--header-height);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
   display: flex;
   align-items: center;
-  background-color: var(--dark-color);
-  padding: 40px;
-  margin-right: 60px;
+  justify-content: center;
+
+  width: 720px; /* Tripled the width */
+  height: auto; /* Keeps aspect ratio */
+  padding: 0;
+  margin: 0;
   transition: 0.5s all ease-out;
-  width: 150px;
-  position: absolute;
-  z-index: 1;
 }
 
-.main-logo a {
-  font-family: "playfair display", Georgia, serif;
-  font-size: 5em;
-  color: #fff;
-  margin: 0 auto;
-  transition: 0.5s all ease-out;
-}
 
 .side-nav-bar {
   position: absolute;
@@ -2000,33 +1998,46 @@ body.nav-active .nav__block .nav__block-item {
   position: relative;
 }
 
+/* Keep the height of the slider */
 .main-slider .slick-slide {
-  height: 90vh;
+  height: 100vh;
 }
 
+/* Ensure each slider item is positioned relatively for layering */
 .main-slider .slider-item {
   position: relative;
 }
 
-.main-slider .banner-content {
+/* Centered image styling */
+.banner-title img {
+  width: 200px; /* Adjust as needed */
+  height: auto; /* Keeps aspect ratio */
+}
+
+/* Centered content container */
+.banner-content {
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 50%;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.main-slider .banner-content h2.banner-title {
-  font-family: var(--heading-font);
-  font-size: 5.5em;
-  font-weight: 900;
-  color: #fff;
-  text-transform: uppercase;
-
+/* Centered image styling */
+.banner-title img {
+  width: 200px; /* Adjust size as needed */
+  height: auto;
 }
+
+/* Remove the following properties: */
+.main-slider .banner-content h2.banner-title, /* Delete this selector if only the image is needed */
+font-family, font-size, font-weight, color, text-transform properties /* All properties under the deleted selector can be removed */
+width: 50%; /* Remove this from .banner-content, as it’s no longer needed */
+text-align: center; /* Remove, as it's handled by flex centering */
+margin-top: 300px; /* Remove, centering is now flex-controlled */
+
 
 #intro .button-container {
   display: flex;
