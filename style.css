@@ -1353,12 +1353,34 @@ This is main CSS file that contains custom style rules used in this template
   align-items: center;
   justify-content: center;
 
-  width: 720px; /* Tripled the width */
+  width: 50vw; /* Sets the width to 50% of the viewport width */
   height: auto; /* Keeps aspect ratio */
   padding: 0;
   margin: 0;
   transition: 0.5s all ease-out;
 }
+
+/* Media query for larger screens */
+@media (min-width: 1200px) {
+  .main-logo {
+      width: 720px; /* Fixed width on very large screens */
+  }
+}
+
+/* Media query for medium screens (e.g., tablets) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .main-logo {
+      width: 50vw; /* 50% of the viewport width */
+  }
+}
+
+/* Media query for small screens (e.g., phones) */
+@media (max-width: 767px) {
+  .main-logo {
+      width: 70vw; /* 70% of the viewport width for smaller screens */
+  }
+}
+
 
 
 .side-nav-bar {
@@ -1996,6 +2018,9 @@ body.nav-active .nav__block .nav__block-item {
 --------------------------------------------------------------*/
 #intro {
   position: relative;
+    height: 100vh; /* Make the section cover the full viewport height */
+    width: 100%; /* Ensure the section covers the full width */
+    overflow: hidden; /* Prevent any content from overflowing */
 }
 
 /* Keep the height of the slider */
