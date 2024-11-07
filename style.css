@@ -2333,11 +2333,14 @@ margin-top: 300px; /* Remove, centering is now flex-controlled */
 }
 
 #latest-blog {
-  min-height: 100vh; /* Minimum height to fill the full viewport initially */
-  padding: 20px 0; /* Adds padding to the top and bottom */
-  background-color: #171717;
+  background-color: #171717; /* Default solid color background */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 20px 0;
   display: flex;
   align-items: center;
+  transition: background-image 1s ease-in-out; /* Smooth transition effect */
 }
 
 /* Ensures container takes full width */
