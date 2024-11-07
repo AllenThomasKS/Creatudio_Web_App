@@ -2258,7 +2258,7 @@ margin-top: 300px; /* Remove, centering is now flex-controlled */
 }
 
 .padding-large {
-  padding-top: 7em;
+  padding-top: 3em;
   padding-bottom: 7em;
 }
 
@@ -2331,6 +2331,12 @@ margin-top: 300px; /* Remove, centering is now flex-controlled */
   color: #fff;
 }
 
+#latest-blog {
+
+  height: 69vh;
+  background-color: #171717; /* Make the section fill the full viewport height */
+
+}
 /*----- About us Section
 --------------------------------------------------------------*/
 #about figure {
