@@ -123,6 +123,7 @@
 					<article class="post-item">
 					  <a href="#" class="image-hvr-effect" data-bg="images/banner3_blur.png">
 						<img src="images/banner3.webp" alt="post" class="post-image">
+						<div class="post-text">Advertising</div>
 					  </a>
 					</article>
 				  </div>
@@ -130,6 +131,7 @@
 					<article class="post-item">
 					  <a href="#" class="image-hvr-effect" data-bg="images/banner_blur.png">
 						<img src="images/banner.webp" alt="post" class="post-image">
+						<div class="post-text">Visual effects</div>
 					  </a>
 					</article>
 				  </div>
@@ -137,6 +139,7 @@
 					<article class="post-item">
 					  <a href="#" class="image-hvr-effect" data-bg="images/banner2_blur.png">
 						<img src="images/banner2.webp" alt="post" class="post-image">
+						<div class="post-text">Game Development</div>
 					  </a>
 					</article>
 				  </div>
@@ -144,19 +147,40 @@
 					<article class="post-item">
 					  <a href="#" class="image-hvr-effect" data-bg="images/banner4_blur.png">
 						<img src="images/banner4.jpg" alt="post" class="post-image">
+						<div class="post-text">Immersive</div>
 					  </a>
 					</article>
 				  </div>
 				</div>
 			  </div>
 			</div>
-		  </div>
-		</div>
+		  </div> 
+		</div> 
 	  </section>
 	  
+	  <!-- JavaScript Code (Place this at the end of the HTML file) -->
+	  <script>
+		document.addEventListener("DOMContentLoaded", function () {
+		  const latestBlog = document.getElementById("latest-blog");
+		  const postItems = document.querySelectorAll(".post-item");
 	  
-	
-	
+		  // Array of background images
+		  const backgrounds = [
+			"url('images/banner3_blur.png')",
+			"url('images/banner_blur.png')",
+			"url('images/banner2_blur.png')",
+			"url('images/banner4_blur.png')"
+		  ];
+	  
+		  // Add hover listeners to each post item
+		  postItems.forEach((item, index) => {
+			item.addEventListener("mouseenter", function () {
+			  latestBlog.style.backgroundImage = backgrounds[index];
+			});
+		  });
+		});
+	  </script>
+	  
 	  
 	
 

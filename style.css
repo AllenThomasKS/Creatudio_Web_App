@@ -2340,7 +2340,54 @@ margin-top: 300px; /* Remove, centering is now flex-controlled */
   padding: 20px 0;
   display: flex;
   align-items: center;
-  transition: background-image 5s ease-in-out; /* Smooth transition effect */
+  transition: background-image 0.8s ease, background-color 0.8s ease; /* Smooth transition */
+}
+
+
+.post-item {
+  position: relative;
+  display: inline-block;
+}
+
+.post-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.post-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 1s ease;
+}
+
+.post-item:hover .post-text::after {
+  width: 100%;
+}
+
+.post-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: brightness(1);
+  transition: filter 2s ease-in-out;
+}
+
+.post-item:hover .post-image {
+  filter: brightness(0.6);
 }
 
 
@@ -2373,12 +2420,16 @@ margin-top: 300px; /* Remove, centering is now flex-controlled */
     margin: 0 auto; /* Centers the images */
     border-radius: 20px;
   }
+  .post-item{
+    border-radius: 20px;
+  }
 }
 
 
 
 .post-item {
   margin: 15px 0; /* Add gap at the top and bottom of each image */
+ ;
 }
 
 /*----- About us Section
