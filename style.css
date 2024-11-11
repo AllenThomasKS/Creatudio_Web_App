@@ -104,8 +104,8 @@ CSS STRUCTURE:
 
 /* Theme Colors */
 :root {
-  --accent-color: #292e34;
-  --dark-color: #5e5e5e;
+  --accent-color: #6c6e70;
+  --dark-color: #ffffff;
   --grey-color: #ff0000;
   --body-text-color: #d9ff00;
   --light-text-color: #fa7900;
@@ -122,7 +122,7 @@ CSS STRUCTURE:
 body {
   --heading-font: "Montserrat", Roboto, sans-serif;
   --heading-font-weight: 400;
-  --heading-color: #111;
+  --heading-color: #d02929;
   --heading-line-height: 1.24;
 
   --swiper-theme-color: #C5A992;
@@ -132,16 +132,16 @@ body {
   --bs-body-font-size: 18px;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #757575;
+  --bs-body-color: #cd0808;
   --bs-body-color-rgb: 117, 117, 117;
 
   --bs-primary: #C5A992;
-  --bs-secondary: #6c757d;
-  --bs-black: #111;
+  --bs-secondary: #3781c1;
+  --bs-black: #b06d6d;
   --bs-light: #F1F1F0;
-  --bs-dark: #2f2f2f;
-  --bs-gray: #9aa1a7;
-  --bs-gray-dark: #51565b;
+  --bs-dark: #962f2f;
+  --bs-gray: #2c6da6;
+  --bs-gray-dark: #39628b;
 
   --bs-primary-rgb: 197, 169, 146;
   --bs-secondary-rgb: 108, 117, 125;
@@ -149,10 +149,10 @@ body {
   --bs-light-rgb: 241, 241, 240;
   --bs-dark-rgb: 33, 37, 41;
 
-  --bs-link-color: #111;
+  --bs-link-color: #a21a1a;
   --bs-link-color-rgb: 17, 17, 17;
   --bs-link-decoration: underline;
-  --bs-link-hover-color: #111;
+  --bs-link-hover-color: #af1d1d;
   --bs-link-hover-color-rgb: 17, 17, 17;
 }
 
@@ -2528,27 +2528,44 @@ figure.subscribe-image {
 /*--------------------------------------------------------------
 /** 4.4 Footer
 --------------------------------------------------------------*/
+/* Footer */
 footer#footer {
   margin-top: 100px;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text color */
+  padding: 60px 0;
+  text-align: center; /* Center align text for all children */
 }
 
 #footer img.footer-logo {
   margin-bottom: 30px;
+  max-width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-menu {
-  margin-right: 15px;
+  margin: 0 auto; /* Center align all footer menus */
+  max-width: 300px; /* Set consistent width for all sections */
 }
 
 .footer-menu h5 {
   font-size: 1.5em;
   margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-transform: capitalize;
+  color: #fff; /* White color for headings */
 }
 
 .footer-menu p {
-  line-height: 2;
+  line-height: 1.8;
+  color: #ccc; /* Light grey text for paragraphs */
+}
+
+.footer-menu .menu-list {
+  list-style: none;
+  padding: 0;
 }
 
 .footer-menu .menu-list i.icon {
@@ -2556,65 +2573,82 @@ footer#footer {
   color: var(--accent-color);
 }
 
-.footer-menu .social-links ul {
-  display: flex;
-  list-style: none;
-}
-
-.footer-menu .social-links li {
-  margin-right: 30px;
-}
-
-.footer-menu .social-links a {
-  color: #757575;
-}
-
-.footer-menu .social-links a:hover {
-  color: #111;
-}
-
 .footer-menu .menu-list li.menu-item {
-  margin-bottom: 20px;
-}
-
-.footer-menu .menu-item {
   display: flex;
+  align-items: center; /* Center align icons and text */
+  justify-content: center; /* Center content horizontally */
+  margin-bottom: 20px;
 }
 
 .footer-menu .menu-item a {
   text-transform: capitalize;
   position: relative;
   transition: 0.3s ease-out;
-  color: #757575;
+  color: #fff; /* White text color */
+  text-decoration: none;
 }
 
 .footer-menu .menu-item a:hover {
-  padding-left: 20px;
-  color: #111;
+  padding-left: 10px;
+  color: #ccc; /* Lighter grey on hover */
 }
 
-.footer-menu .menu-item a:hover:before {
-  content: "";
-  border-bottom: 2px solid var(--accent-color);
-  position: absolute;
-  top: 12px;
-  left: 3px;
-  width: 14px;
-  align-items: center;
+.footer-menu .social-links ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 20px; /* Consistent spacing between icons */
+  padding: 0;
+}
+
+.footer-menu .social-links a {
+  color: #fff; /* White icons */
+  font-size: 1.2em; /* Increase icon size */
+}
+
+.footer-menu .social-links a:hover {
+  color: #ccc; /* Lighter grey on hover */
 }
 
 /* Footer bottom */
 #footer-bottom {
-  border-top: 1px solid #efefef;
+  border-top: 1px solid #333; /* Darker border for footer bottom */
   padding-top: 30px;
-  margin-top: 80px;
+  margin-top: 40px;
+  background-color: #111; /* Darker background for footer bottom */
 }
 
-@media only screen and (max-width: 800px) {
+#footer-bottom p {
+  color: #fff; /* White text in the bottom section */
+  text-align: center; /* Center align text */
+}
 
-  #footer-bottom .copyright,
-  #footer-bottom .text-right {
-    text-align: center;
+/* Flexbox for Footer */
+footer#footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* Add spacing between sections */
+}
+
+footer#footer .footer-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Mobile Adjustments */
+@media only screen and (max-width: 800px) {
+  footer#footer .container {
+    gap: 20px; /* Reduce spacing on smaller screens */
+  }
+
+  .footer-menu {
+    margin-bottom: 20px;
+  }
+
+  .footer-menu h5 {
+    font-size: 1.2em;
   }
 }
 
@@ -2870,16 +2904,25 @@ footer#footer {
 /*--------------------------------------------------------------
 /** 5.3 Contact
 --------------------------------------------------------------*/
-/* contact section */
-#contact .left-content {
-  padding-right: 100px;
+/* Contact Section */
+#contact {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center;     /* Centers content vertically */
+  min-height: 100vh;       /* Ensures the section takes the full height of the viewport */
+  padding: 20px;           /* Padding to give some spacing */
 }
 
-#contact .right-content {
-  width: 100%;
-  background: #fff;
-  padding: 88px 83px;
+#contact .left-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* Centers the content horizontally */
+  text-align: center;     /* Centers text within the left-content */
+  max-width: 600px;       /* Optional: limits the width of the form */
+  width: 100%;            /* Ensures the content takes up full width inside the container */
 }
+
+
 
 @media only screen and (max-width: 1170px) {
   #contact .left-content {
@@ -2923,6 +2966,7 @@ footer#footer {
     margin-top: 40px;
   }
 }
+
 
 /* Contact form light
 --------------------------------------------------------------*/
@@ -3020,17 +3064,24 @@ footer#footer {
   font-weight: 900;
 }
 
+#testimonial {
+  background: linear-gradient(135deg, #202020, #000000); /* Customize colors and angle */
+  color: #fff;
+}
+
+
 @media only screen and (max-width: 580px) {
   img.review-image {
     width: 100%;
     height: auto;
   }
+
 }
 
 /*--------------------------------------------------------------
 /** 5.6 Portfolio Tabs
 --------------------------------------------------------------*/
-/* .portfolio-tabs .tab-content {
+.portfolio-tabs .tab-content {
   position: relative;
 }
 
@@ -3120,7 +3171,7 @@ footer#footer {
     width: 100%;
     height: auto;
   }
-} */
+}
 
 /*--------------------------------------------------------------
 /** 5.7 Post Grid
